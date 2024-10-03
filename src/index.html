@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+  <link href="/dist/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | News homepage</title>
+</head>
+<body class="p-12 font-sans m-auto">
+  <nav class="pb-12 flex items-center justify-between relative">
+    <div id="logo" class="m-0">
+      <img src="/assets/images/logo.svg" alt="logo">
+    </div>
+    <ul id="menu" class="flex space-x-6 text-gray-700 text-sm hidden md:flex">
+      <li><a href="#" class="hover:text-cu-yellow">Home</a></li>
+      <li><a href="#" class="hover:text-cu-yellow">New</a></li>
+      <li><a href="#" class="hover:text-cu-yellow">Popular</a></li>
+      <li><a href="#" class="hover:text-cu-yellow">Trending</a></li>
+      <li><a href="#" class="hover:text-cu-yellow">Categories</a></li>
+    </ul>
+    <div class="md:hidden">
+      <button id="menu-button" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="1" y="3" rx="1"></rect>
+          <rect width="20" height="1" y="10" rx="1"></rect>
+          <rect width="20" height="1" y="17" rx="1"></rect>
+        </svg>
+      </button>
+      <ul id="dropdown-menu" class="hidden absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 transition-all ease-in duration-500">
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-xl hover:text-cu-yellow duration-500">Home</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-xl hover:text-cu-yellow duration-500">Service</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-xl hover:text-cu-yellow duration-500">About</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-xl hover:text-cu-yellow duration-500">Contact</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-xl hover:text-cu-yellow duration-500">Blog</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    // Toggle menu visibility on button click
+    menuButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+        dropdownMenu.classList.toggle('opacity-100');
+        dropdownMenu.classList.toggle('top-0');
+    });
+
+    // Close menu if click outside
+    window.addEventListener('click', (event) => {
+        if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add('hidden');
+            dropdownMenu.classList.remove('opacity-100', 'top-0');
+        }
+    });
+  </script>
+
+</body>
+</html>
+
+
+  
+  <!-- Grid Container -->
+  <div class="w-full h-full">
+    <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-4 gap-3 h-full">
+      <!-- Kolom 1 dan 2 menyatu -->
+      <div class="md:col-span-2 md:row-span-2 md:max-h-full flex items-center justify-center h-full">
+        <img id="firstImage" src="/assets/images/image-web-3-desktop.jpg" alt="image-web-3-desktop" class="max-full">
+      </div>
+      <!-- Kolom 3 memanjang ke bawah -->
+      <div class="bg-black p-4 row-span-4 md:row-span-4 md:gap-x-6">
+        <div id="new" class="pb-6">
+          <h1 id="new1" class="text-5xl font-bold text-white">New</h1>
+        </div>
+        <div id="new1 pt-5 pb-2">
+          <h3 id="1" class="hover:text-cu-yellow text-sm font-bold text-white cursor-pointer">Hydrogen VS Electric Cars</h3>
+          <p id="textN" class="pb-3 pt-3 text-xs text-white"> Will hydrogen-fueled cars ever catch up to EVs?</p><hr class="border-t-1 border-white my-6">
+        </div>
+        <div id="new2 pt-5 pb-2">
+          <h3 id="2" class="hover:text-cu-yellow text-sm font-bold text-white cursor-pointer" >The Downsides of AI Artistry</h3>
+          <p id="textN pb-2" class="pb-3 pt-3 text-xs text-white">What are the possible adverse effects of on-demand AI image generation?</p><hr class="border-t-1 border-white my-6">
+        </div>
+        <div id="new3 pt-5 pb-2">
+          <h3 id="3" class="hover:text-cu-yellow text-sm font-bold text-white cursor-pointer">Is VC Funding Drying Up?</h3>
+          <p id="textN pb-2" class="pb-3 pt-3 text-xs text-white">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p><hr class="border-t-1 border-white my-6">
+        </div>
+      </div>
+
+
+      <div class="row-span-2 flex items-left">
+        <h1 class="text-6xl font-bold text-dark-blue">The Bright Future of Web 3.0?</h1>
+      </div>
+      <div class="flex items-center justify-center">
+        <p id="text1" class="text-grayish-blue">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+          But is it really fulfilling its promise?</p>
+      </div>
+      <div id="button" class="pt-10 items-center">
+        <button id="button1" class="bg-black text-white px-4 py-2 rounded cursor-pointer bg-orange- hover:bg-cu-yellow">Read more</button>
+        </div>
+      <div class="flex pt-8">
+        <div id="image11">
+          <img id="image1" class="w-20" src="/assets/images/image-retro-pcs.jpg" alt="image-retro-pcs">
+        </div>
+        <div id="number11" class="px-4">
+          <h1 id="number1" class="text-orange-red font-bold text-xl">01</h1>
+          <h2 id="title1" class="text-dark-blue font-bold hover:text-orange-red text-sm">Reviving Retro PCs</h2>
+          <p id="text11" class="text-xs pt-3 text-gray-600">What happens when old PCs are given modern upgrades? </p>
+        </div>
+      </div>
+      <div class="flex pt-8">
+        <div id="image12">
+          <img id="image2" class="w-20" src="/assets/images/image-top-laptops.jpg" alt="image-top-laptops">
+        </div>
+        <div id="number12" class="px-4">
+          <h1 id="number2" class="text-orange-red font-bold text-xl">02</h1>
+          <h2 id="title2" class="text-dark-blue font-bold hover:text-orange-red text-sm">Top 10 Laptops of 2022</h2>
+          <p id="text12" class="text-xs pt-3 text-gray-600">Our best picks for various needs and budgets.</p>
+        </div>
+      </div>
+      <div class="flex pt-8">
+        <div id="image13">
+          <img id="image3" class="w-20" src="/assets/images/image-gaming-growth.jpg" alt="image-gaming-growth">
+        </div>
+        <div id="number13" class="px-4">
+          <h1 id="number3" class="text-orange-red font-bold text-xl">03</h1>
+          <h2 id="title3" class="text-dark-blue font-bold hover:text-orange-red text-sm">The Growth of Gaming</h2>
+          <p id="text13" class="text-xs pt-3 text-gray-600">How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+</div>
+
+  <div id="footage" class="p-24 font-thin text-center text-sm">
+    Challenge by <a class="text-cu-yellow" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a class="text-cu-yellow font-semibold" href="#">Najzua Ramdhanni</a>.
+  </div>
+</body>
+</html>
