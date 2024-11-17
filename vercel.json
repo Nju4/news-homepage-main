@@ -1,5 +1,14 @@
+cart.py. {
+"version": 2,
+"builds": [
 {
-  "rewrites":  [
-    {"source": "/(.*)", "destination": "/"}
-  ]
+"src": "cart.py",
+"use": "@vercel/python"
 }
+],
+"routes": [
+{
+"src": "/(.*)",
+"dest": "cart.py"
+}
+]
